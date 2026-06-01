@@ -1,0 +1,66 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Single forecast (today)",
+      "type": "python",
+      "request": "launch",
+      "module": "macro8_subnet.execution.live_runner",
+      "args": ["--mode", "once"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Run backtest",
+      "type": "python",
+      "request": "launch",
+      "module": "macro8_subnet.execution.live_runner",
+      "args": ["--mode", "backtest"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Paper trade (daily cron)",
+      "type": "python",
+      "request": "launch",
+      "module": "macro8_subnet.execution.live_runner",
+      "args": ["--mode", "paper"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Integration check (fast)",
+      "type": "python",
+      "request": "launch",
+      "module": "macro8_subnet.local_simulation",
+      "args": ["--fast"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Integration check (full)",
+      "type": "python",
+      "request": "launch",
+      "module": "macro8_subnet.local_simulation",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Run all tests",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["macro8_subnet/tests/", "-v", "--tb=short"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Validator (dry-run)",
+      "type": "python",
+      "request": "launch",
+      "module": "macro8_subnet.neurons.validator",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Miner (dry-run)",
+      "type": "python",
+      "request": "launch",
+      "module": "macro8_subnet.neurons.miner",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
